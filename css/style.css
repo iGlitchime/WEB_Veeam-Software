@@ -1,0 +1,672 @@
+*{
+    -webkit-backface-visibility:hidden; /*отключает отрисовку задней стороны div*/
+    box-sizing:border-box; /* развмер DIV включает в себя padding и border */
+}
+html{
+    overflow: auto;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-overflow-scrolling: touch;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    -webkit-active-highlight-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    font-family: Helvetica, sans-serif, Regular, Arial;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-overflow-scrolling: touch;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    -webkit-active-highlight-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    margin: 0;
+}
+.header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background:url("img/bg.png") ;
+    /*padding: 0 1%;*/
+}
+.upzone {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    padding: 0 1%;
+}
+.headerObj {
+    width: auto;
+    height: 100%;
+}
+#leftLogo {
+    min-width: 140px;
+    background: url(img/leftLogo.png) no-repeat;
+    background-position: left;
+    background-size: 142px 52px;
+}
+#rightLogo {
+    min-width: 450px;
+    background: url(img/rightLogo.png) no-repeat;
+    background-position: right;
+    background-size: 500px 52px;
+}
+.TopGreenLine {
+    position: relative;
+    height: 30px;
+    min-width: 300px;
+    color: #ffffff;
+    background-color: forestgreen;
+    line-height: 30px;
+    font-size: 12px;
+    padding: 0 1%;
+}
+.txt {
+    display: inline;
+    color: #000;
+    margin: 0 5px;
+}
+.tiny {
+    font-weight: lighter;
+}
+.bold{
+    font-weight: bolder;
+}
+.header .tiny, .header .bold {
+    color: #fff;
+}
+.page {
+    position: absolute;
+    width:100%;
+    height: 790px;
+    top: 100px;
+    background: url("img/bg.png");
+    overflow: auto;
+}
+
+/* --------------------------- BEGIN pageTabs --------------------------- */
+
+.pageTabs {
+    position: relative;
+    min-width: 500px;
+    width: 85%;
+    margin: 2em auto 2em;
+    padding-bottom: 30px;
+}
+.pageTabs > span {
+    display: none;
+}
+
+.pageTabs > h3 {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    height: 30px;
+    width: 120px;
+    border-radius: 5px 5px 0px 0px;
+    border: 1px solid lightgray;
+    border-bottom: none;
+    background-color: inherit;
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    line-height: 30px;
+    font-weight: normal;
+}
+.pageTabs > h3 a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+.pageTabs > h3:nth-of-type(1) { right: 10px; }
+.pageTabs > h3:nth-of-type(2) { right: 135px; }
+
+.pageTabs > h3,
+.pageTabs > span:not(:nth-of-type(1)):target ~ h3:nth-of-type(1) {
+    background-color: #ddd;
+}
+
+.pageTabs > span:nth-of-type(1):target ~ h3:nth-of-type(1),
+.pageTabs > span:nth-of-type(2):target ~ h3:nth-of-type(2),
+.pageTabs > h3:nth-of-type(1) {
+    background-color: #fff;
+}
+.pageTabs > div {
+    position: relative;
+    top: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 1px 20px;
+}
+
+.pageTabs > div,
+.pageTabs > span:not(:nth-of-type(1)):target ~ div:nth-of-type(1) {
+    background-color: #ddd;
+    display: none;
+}
+
+.pageTabs > span:nth-of-type(1):target ~ div:nth-of-type(1),
+.pageTabs > span:nth-of-type(2):target ~ div:nth-of-type(2),
+.pageTabs > div:nth-of-type(1) {
+    background-color: #fff;
+    display: block;
+}
+/* --------------------------- END pageTabs --------------------------- */
+/*  ----- BEGIN FIRST TAB ----- */
+.firstTab {
+    position: relative;
+    width: 100%;
+    height: 732px;
+}
+.FirstTabLogo {
+    position: relative;
+    top: 20px;
+    width: 100%;
+    height: 150px;
+    background-image: url("img/FirstTabLogo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    margin-bottom: 20px;
+}
+.H1block {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 2em 9em;
+}
+.FirstTabLogo .txt.bold {
+    font-size: 16px;
+    color: #fff;
+    line-height: 3em;
+}
+.FirstTabLogo .txt.yellow{
+    color: yellow;
+}
+.FirstTabLogo .txt.tiny {
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    line-height: 2em;
+}
+.content {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    top: 20px;
+}
+.FirstTabLeftBlock {
+    width: 40em;
+    height: 33em;
+    margin: 10px;
+}
+/* ------------------- FORM ------------------- */
+.FirstTabRightBlock {
+    width: 27em;
+    height: 24em;
+    top: 5px;
+    /*margin: 10px;*/
+    padding: 10px 0;
+    border: 5px solid white;
+    background-image: url("img/bg.png");
+    background-position: center;
+    box-shadow: 0px 0px 4px #888888;
+}
+.formHeader {
+    position: relative;
+    width: 100%;
+    height:44px;
+    color: forestgreen;
+    font-size: 21px;
+    text-align: center;
+    font-weight: bolder;
+}
+.red {
+    color: red;
+}
+.inputSmth {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    margin: 5px 0;
+    line-height: 2em;
+}
+
+form .txt{
+    display: block;
+    /*float:left;*/
+}
+label.txt {
+    display: inline-block;
+    width: 9em;
+    text-align: left;
+    color: #000;
+    margin: 0px 11px;
+    /* padding-right: 10px; */
+}
+/*.inputSmth input#FirstName {*/
+    /*display: inline-block;*/
+/*}*/
+
+input, select {
+    display: inline-block;
+    width: 14.5em;
+    min-width: 4em;
+    height: 2em;
+    line-height: 2em;
+}
+
+#chooseState, #changeState {
+    display: none;
+}
+.GreenButton {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    background-color: forestgreen;
+    color: white;
+    border-radius: 5px;
+    margin: 30px 35%;
+}
+
+.textBlockHead {
+    position: relative;
+    width: 100%;
+    height: 155px;
+    /*border: 1px solid darkred;*/
+}
+.textBlockTitle {
+    width: auto;
+    height: 20px;
+    margin: 20px 0;
+    /*border: 1px solid red;*/
+    font-weight: bolder;
+    font-size: 18px;
+}
+.textBlockSecondTitle {
+    width: auto;
+    height: 20px;
+    /*border: 1px solid indianred;*/
+    font-weight: bold;
+    font-size: 16px;
+    margin: 20px 0;
+}
+.textBlockThirdTitle {
+    width: auto;
+    height: 20px;
+    /*border: 1px solid mediumvioletred;*/
+    font-size: 14px;
+    margin: 20px 0;
+}
+.textBlockFourthTitle {
+    width: auto;
+    height: 20px;
+    /*border: 1px solid orangered;*/
+    font-size: 12px;
+    margin: 20px 0;
+}
+.videoAndList {
+    position: relative;
+    width: auto;
+    height: 10em;
+    /*border: 1px solid darkorange;*/
+}
+.videoPic {
+    position: relative;
+    top: 1em;
+    width: 160px;
+    height: 110px;
+    float: left;
+    background-image: url("img/videoPic.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+img {
+    position: relative;
+    top: 5.2em;
+    width: 143px;
+    height: 54px;
+}
+#videoPic a.popup-youtube {
+    width: 160px;
+    height: 110px;
+}
+.listBlock {
+    position: relative;
+    float: left;
+    width: 34.2em;
+    height: 13em;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.infographicsBlock {
+    position: relative;
+    width: 100%;
+    height: 10em;
+    /*margin: 10px 0;*/
+}
+.infographicsTitle {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1em;
+    font-size: 11px;
+    line-height: 1em;
+    font-weight: bolder;
+}
+.infographics{
+    position: relative;
+    width: auto;
+    height: 8em;
+    margin: 5px 0;
+}
+.infographicsPic1 {
+    position: relative;
+    float: left;
+    width: 8em;
+    height: 8em;
+    margin-right: 20px;
+    background-image: url("img/infographicsPic1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.infographicsPic2{
+    position: relative;
+    float: left;
+    width: 8em;
+    height: 8em;
+    background-image: url("img/infographicsPic2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.infographicsFooter {
+    position: relative;
+    width: auto;
+    height: 1em;
+    /*border: 1px solid orange;*/
+    font-size: 10px;
+    margin: 5px 0;
+    color: navy;
+}
+.page .pageTabs .secondTab {
+    height: 750px;
+}
+.secondTab .FirstTabLeftBlock {
+    height: 32em;
+}
+.secondTab .textBlockHead {
+    height: 7em;
+}
+.secondTab img {
+    top: 10.8em;
+    width: 143px;
+    height: 54px;
+}
+.secondTab .videoPic {
+    position: relative;
+    top: 0em;
+    height: 200px;
+    background-image: url("img/videoPic2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.secondTab .headerOfList {
+    position: relative;
+    width: auto;
+    height: 1.5em;
+    padding-left: 25px;
+}
+.secondTab ul {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+.secondTab .videoAndList {
+    height: 17em;
+}
+.secondTab .lastTxtLine {
+    position: relative;
+    width: auto;
+    height: 1em;
+    font-size: 12px;
+}
+.footer {
+    position: relative;
+    height: 100px;
+    min-width: 500px;
+    width: 85%;
+    top: 1em;
+    margin: auto 5.8em;
+    padding-bottom: 30px;
+}
+.footer .leftFooterLinks {
+    position: relative;
+    display: block;
+    float: left;
+    height: 2em;
+    width: auto;
+    font-size: 11px;
+}
+.footer .socialLinks {
+    position: relative;
+    display: block;
+    float: left;
+    height: 2em;
+    width: 13em;
+}
+.footer .social {
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 0.5em;
+    height: 2em;
+    width: 3em;
+}
+.social-tw {
+    background-image: url("img/tw.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.social-in {
+    background-image: url("img/in.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.footer .social.social-g {
+    width: 1.7em;
+    height: 2em;
+    background-image: url("img/g.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.social-fb {
+    background-image: url("img/fb.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.copyright {
+    display: block;
+    min-width: 500px;
+    width: 85%;
+    text-align: center;
+    height: 2em;
+    font-size: 10px;
+}
+span.navyTxt {
+    color: navy;
+}
+
+
+@media only screen and (min-width: 800px){
+    .pageTabs {
+        margin: 2em auto 0;
+    }
+    .H1block {
+        padding: 2.5em 4em;
+    }
+    .FirstTabLeftBlock{
+        height: 32em;
+    }
+    .textBlockTitle {
+        margin: 5px 0;
+    }
+    .textBlockSecondTitle{
+        font-size: 13px;
+        margin: 0 0 17px 0;
+    }
+    .textBlockThirdTitle{
+        font-size: 13px;
+        margin: 5px 0;
+    }
+    .textBlockFourthTitle{
+        font-size: 12px;
+        margin: 5px 0;
+    }
+    .textBlockHead {
+        height: 100px;
+    }
+    .listBlock {
+        width: 21em;
+        height: 26em;
+        font-size: 11px;
+    }
+    .videoAndList{
+        height: 14em;
+        width: 25em;
+    }
+    .infographicsTitle{
+        position: absolute;
+    }
+    .infographics {
+        position: absolute;
+        top: 1em;
+        width: auto;
+        height: 8em;
+        margin: 5px 0;
+    }
+    .infographicsFooter{
+        position: absolute;
+        top: 15em;
+    }
+    .formHeader{
+        height: 1.3em;
+
+    }
+    .inputSmth {
+        width: 100%;
+        height: 30px;
+    }
+    label.txt {
+        margin: 0px 5px;
+        width: 8em;
+    }
+    input, select {
+        display: inline-block;
+        width: 9em;
+    }
+    .secondTab {
+
+        height: 650px;
+    }
+    .secondTab .content {
+        height: 440px;
+    }
+    .page .pageTabs .secondTab {
+        height: 650px;
+    }
+    .footer {
+        margin: auto 4em;
+    }
+    .footer .leftFooterLinks {
+        line-height: 3em;
+    }
+    .copyright {
+        margin-top: 2em;
+    }
+}
+@media only screen and (min-width: 950px){
+    .FirstTabLogo{
+        hight: 140px;
+    }
+    .H1block {
+        padding: 2.5em 7em 1.5em 5em;
+    }
+    .videoAndList {
+        height: 14em;
+        width: 28em;
+    }
+    .listBlock {
+        width: 24em;
+        height: 18em;
+        font-size: 12px;
+    }
+    .infographicsBlock {
+        height: 11em;
+    }
+    input, select {
+        width: 12em;
+    }
+    .textBlockSecondTitle {
+        font-size: 14px;
+        margin: 16px 0 14px 0;
+    }
+}
+@media only screen and (min-width: 1050px){
+    .pageTabs{
+        max-width: 939px;
+    }
+    .H1block {
+        padding: 2.5em 8em 1.5em 8em;
+    }
+    .videoAndList {
+        width: 32em;
+        margin-top: 1em;
+    }
+    .listBlock {
+        width: 29em;
+    }
+    input, select {
+        display: inline-block;
+        width: 16em;
+    }
+}
